@@ -4,11 +4,13 @@
  */
 package view;
 
+import abstracts.Bebida;
 import factory.FactoryCha;
 import factory.FactoryCafe;
 import factory.FactoryCappuccino;
 import factory.FactoryChocolate;
 import interfaces.FactoryBebidas;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -141,55 +143,139 @@ public class TelaLanchonete extends javax.swing.JFrame {
     private void btnChaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChaActionPerformed
         // botão para chamar a tela cha
         FactoryBebidas factory = new FactoryCha();
-        TelaBebidas bebidas = new TelaBebidas(
-                factory.createBebida().getNome(),
-                factory.createBebida().getDescricao(),
-                factory.createBebida().getIngredientes(),
-                factory.createBebida().getPreco()
-        );
-        bebidas.setVisible(true);
-        this.dispose();              
-       
+
+        Object[] items = {"Gelado", "Quente"};
+        Object selectedValue = JOptionPane.showInputDialog(null,
+                "Escolha um item ", "Opçao",
+                JOptionPane.INFORMATION_MESSAGE, null,
+                items, items[0]);
+
+        if (selectedValue.equals(items[0])) {
+            Bebida cold = factory.coldBebida();
+            TelaBebidas tela = new TelaBebidas(
+                    cold.getNome(),
+                    cold.getDescricao(),
+                    cold.getIngredientes(),
+                    cold.getPreco()
+            );
+            tela.setVisible(true);
+            this.dispose();
+
+        } else if (selectedValue.equals(items[1])) {
+            Bebida hot = factory.hotBebida();
+            TelaBebidas tela = new TelaBebidas(
+                    hot.getNome(),
+                    hot.getDescricao(),
+                    hot.getIngredientes(),
+                    hot.getPreco()
+            );
+            tela.setVisible(true);
+            this.dispose();
+        }
+
+
     }//GEN-LAST:event_btnChaActionPerformed
 
     private void btnChocolateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChocolateActionPerformed
-        // botao para chamar a tela chocolate
+        // botão para chamar a tela cha
         FactoryBebidas factory = new FactoryChocolate();
-        TelaBebidas bebidas = new TelaBebidas(
-                factory.createBebida().getNome(),
-                factory.createBebida().getDescricao(),
-                factory.createBebida().getIngredientes(),
-                factory.createBebida().getPreco()
-        );
-        bebidas.setVisible(true);
-        this.dispose();
+
+        Object[] items = {"Gelado", "Quente"};
+        Object selectedValue = JOptionPane.showInputDialog(null,
+                "Escolha um item ", "Opçao",
+                JOptionPane.INFORMATION_MESSAGE, null,
+                items, items[0]);
+
+        if (selectedValue.equals(items[0])) {
+            Bebida cold = factory.coldBebida();
+            TelaBebidas tela = new TelaBebidas(
+                    cold.getNome(),
+                    cold.getDescricao(),
+                    cold.getIngredientes(),
+                    cold.getPreco()
+            );
+            tela.setVisible(true);
+            this.dispose();
+
+        } else if (selectedValue.equals(items[1])) {
+            Bebida hot = factory.hotBebida();
+            TelaBebidas tela = new TelaBebidas(
+                    hot.getNome(),
+                    hot.getDescricao(),
+                    hot.getIngredientes(),
+                    hot.getPreco()
+            );
+            tela.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_btnChocolateActionPerformed
 
     private void btnCafeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCafeActionPerformed
-        // botao para chamar a tela cafe
+        // botão para chamar a tela cha
         FactoryBebidas factory = new FactoryCafe();
-        TelaBebidas bebidas = new TelaBebidas(
-                factory.createBebida().getNome(),
-                factory.createBebida().getDescricao(),
-                factory.createBebida().getIngredientes(),
-                factory.createBebida().getPreco()
-        );
-        bebidas.setVisible(true);
-        this.dispose();
+
+        Object[] items = {"Gelado", "Quente"};
+        Object selectedValue = JOptionPane.showInputDialog(null,
+                "Escolha um item ", "Opçao",
+                JOptionPane.INFORMATION_MESSAGE, null,
+                items, items[0]);
+
+        if (selectedValue.equals(items[0])) {
+            Bebida cold = factory.coldBebida();
+            TelaBebidas tela = new TelaBebidas(
+                    cold.getNome(),
+                    cold.getDescricao(),
+                    cold.getIngredientes(),
+                    cold.getPreco()
+            );
+            tela.setVisible(true);
+            this.dispose();
+
+        } else if (selectedValue.equals(items[1])) {
+            Bebida hot = factory.hotBebida();
+            TelaBebidas tela = new TelaBebidas(
+                    hot.getNome(),
+                    hot.getDescricao(),
+                    hot.getIngredientes(),
+                    hot.getPreco()
+            );
+            tela.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_btnCafeActionPerformed
 
     private void btnCappucinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCappucinoActionPerformed
-        // botão para chamar a tela cappuccino
+        // botão para chamar a tela cha
         FactoryBebidas factory = new FactoryCappuccino();
-        TelaBebidas bebidas = new TelaBebidas(
-                factory.createBebida().getNome(),
-                factory.createBebida().getDescricao(),
-                factory.createBebida().getIngredientes(),
-                factory.createBebida().getPreco()
-                
-        );
-        bebidas.setVisible(true);
-        this.dispose();
+
+        Object[] items = {"Gelado", "Quente"};
+        Object selectedValue = JOptionPane.showInputDialog(null,
+                "Escolha um item ", "Opçao",
+                JOptionPane.INFORMATION_MESSAGE, null,
+                items, items[0]);
+
+        if (selectedValue.equals(items[0])) {
+            Bebida cold = factory.coldBebida();
+            TelaBebidas tela = new TelaBebidas(
+                    cold.getNome(),
+                    cold.getDescricao(),
+                    cold.getIngredientes(),
+                    cold.getPreco()
+            );
+            tela.setVisible(true);
+            this.dispose();
+
+        } else if (selectedValue.equals(items[1])) {
+            Bebida hot = factory.hotBebida();
+            TelaBebidas tela = new TelaBebidas(
+                    hot.getNome(),
+                    hot.getDescricao(),
+                    hot.getIngredientes(),
+                    hot.getPreco()
+            );
+            tela.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_btnCappucinoActionPerformed
 
     /**
@@ -206,16 +292,24 @@ public class TelaLanchonete extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaLanchonete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaLanchonete.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaLanchonete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaLanchonete.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaLanchonete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaLanchonete.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaLanchonete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaLanchonete.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 

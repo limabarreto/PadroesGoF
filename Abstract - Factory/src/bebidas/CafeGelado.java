@@ -11,14 +11,15 @@ import java.util.Arrays;
  *
  * @author MATHEUS LIMA
  */
-public class Cafe extends Bebida {
+public class CafeGelado extends Bebida {
 
-    public Cafe() {
-        nome = "Café";
-        descricao = Arrays.asList("O café é uma bebida produzida\n a partir dos grãos torrados\n do fruto do cafeeiro.\n É servido tradicionalmente quente,\n mas também pode ser consumido gelado ");
+    public CafeGelado() {
+        nome = "Café Gelado";
+        descricao = Arrays.asList("O café é uma bebida produzidaa partir dos grãos torrados do fruto\n do cafeeiro. É servido tradicionalmente quente, mas também pode ser\n consumido gelado ");
         preco = 5.00;
         //ingredientes = new String[] {"Açucar, Água, 4 colheres de café"};
         ingredientes = Arrays.asList("200ml de água\n 4 colheres de café\n Açucar a gosto");
 
     }
+
 }

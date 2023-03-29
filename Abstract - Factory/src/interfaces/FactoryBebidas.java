@@ -11,5 +11,9 @@ import abstracts.Bebida;
  * @author MATHEUS LIMA
  */
 public interface FactoryBebidas {
-    public Bebida createBebida();
+
+    public Bebida hotBebida();
+
+    public Bebida coldBebida();
+
 }

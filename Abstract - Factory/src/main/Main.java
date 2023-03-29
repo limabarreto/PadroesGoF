@@ -12,5 +12,6 @@ import interfaces.FactoryBebidas;
  * @author MATHEUS LIMA
  */
 public class Main {
-     FactoryBebidas fabrica = new FactoryCha();
+
+    FactoryBebidas fabrica = new FactoryCha();
 }

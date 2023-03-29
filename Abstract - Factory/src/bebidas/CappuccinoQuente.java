@@ -11,10 +11,10 @@ import java.util.Arrays;
  *
  * @author MATHEUS LIMA
  */
-public class Cappuccino extends Bebida {
+public class CappuccinoQuente extends Bebida {
 
-    public Cappuccino() {
-        nome = "Cappuccino";
+    public CappuccinoQuente() {
+        nome = "Cappuccino Quente";
         descricao = Arrays.asList("Cappuccino, do italiano, pronunciado:\n ou capuchino, geralmente pronunciado: em português, é uma bebida italiana\n preparada com café expresso e leite. ");
         preco = 10.00;
         //ingredientes = new String[]{"500ml de leite, Café, Chocolate, Chantilly"};

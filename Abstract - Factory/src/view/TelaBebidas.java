@@ -4,8 +4,6 @@
  */
 package view;
 
-
-
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -21,35 +19,40 @@ public class TelaBebidas extends javax.swing.JFrame {
     public TelaBebidas() {
         initComponents();
     }
-    
+
     public static String nome;
-    public static List<String>ingredientes;
+    public static List<String> descricao;
+    public static List<String> ingredientes;
     public static double preco;
-    public static List<String>descricao;
-    
-    public TelaBebidas(String nome,List<String>descricao, List<String>ingredientes, double preco){
+
+    public TelaBebidas(String nome, List<String> descricao, List<String> ingredientes, double preco) {
         TelaBebidas.nome = nome;
+        TelaBebidas.descricao = descricao;
         TelaBebidas.ingredientes = ingredientes;
         TelaBebidas.preco = preco;
-        TelaBebidas.ingredientes = descricao;
+
         initComponents();
-        
+
         this.txtNomeBebida.setEditable(false);
-        this.txtPrecoBebida.setEditable(false);
-        this.txtIngredientesBebida.setEditable(false);
         this.txtDescricaoBebida.setEditable(false);
-        
+        this.txtIngredientesBebida.setEditable(false);
+        this.txtPrecoBebida.setEditable(false);
+
         StringBuilder items = new StringBuilder();
-        int posicao = 1;
         ingredientes.forEach((saida) -> {
             items.append(" - ").append(saida).append("\n");
         });
-        
+
+        StringBuilder itemsdescricao = new StringBuilder();
+        descricao.forEach((saida) -> {
+            itemsdescricao.append(" ").append(saida).append("\n");
+        });
+
         this.txtNomeBebida.setText(nome);
-        this.txtPrecoBebida.setText("R$: "+String.valueOf(preco));
+        this.txtPrecoBebida.setText("R$: " + String.valueOf(preco));
         this.txtIngredientesBebida.setText(items.toString());
-        this.txtDescricaoBebida.setText(items.toString());
-        
+        this.txtDescricaoBebida.setText(itemsdescricao.toString());
+
     }
 
     /**
@@ -81,7 +84,7 @@ public class TelaBebidas extends javax.swing.JFrame {
         txtDescricaoBebida.setEditable(false);
         txtDescricaoBebida.setColumns(20);
         txtDescricaoBebida.setFont(new java.awt.Font("Serif", 2, 12)); // NOI18N
-        txtDescricaoBebida.setForeground(new java.awt.Color(153, 51, 0));
+        txtDescricaoBebida.setForeground(new java.awt.Color(204, 102, 0));
         txtDescricaoBebida.setTabSize(0);
         txtDescricaoBebida.setAutoscrolls(false);
         txtDescricaoBebida.setBorder(null);
@@ -98,19 +101,22 @@ public class TelaBebidas extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Gabriola", 2, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Gabriola", 3, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 102, 0));
         jLabel3.setText("Ingredientes");
 
-        jLabel4.setFont(new java.awt.Font("Gabriola", 2, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Gabriola", 3, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(204, 102, 0));
         jLabel4.setText("Preço");
 
-        jLabel5.setFont(new java.awt.Font("Gabriola", 2, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Gabriola", 3, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 102, 0));
         jLabel5.setText("Descrição");
 
         txtPrecoBebida.setEditable(false);
+        txtPrecoBebida.setFont(new java.awt.Font("Gabriola", 2, 18)); // NOI18N
+        txtPrecoBebida.setForeground(new java.awt.Color(153, 51, 0));
+        txtPrecoBebida.setBorder(null);
         txtPrecoBebida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPrecoBebidaActionPerformed(evt);
@@ -118,10 +124,16 @@ public class TelaBebidas extends javax.swing.JFrame {
         });
 
         txtIngredientesBebida.setEditable(false);
+        txtIngredientesBebida.setBackground(new java.awt.Color(255, 255, 255));
         txtIngredientesBebida.setColumns(20);
+        txtIngredientesBebida.setForeground(new java.awt.Color(204, 102, 0));
         txtIngredientesBebida.setRows(5);
+        txtIngredientesBebida.setBorder(null);
         jScrollPane2.setViewportView(txtIngredientesBebida);
 
+        txtNomeBebida.setFont(new java.awt.Font("Gabriola", 2, 24)); // NOI18N
+        txtNomeBebida.setForeground(new java.awt.Color(255, 153, 153));
+        txtNomeBebida.setBorder(null);
         txtNomeBebida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomeBebidaActionPerformed(evt);
@@ -132,70 +144,66 @@ public class TelaBebidas extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(36, 36, 36)
-                                .addComponent(txtPrecoBebida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addComponent(btnConfirmaChocolate, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel5)
-                        .addGap(19, 19, 19)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(162, 162, 162))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(123, 123, 123)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(112, 112, 112)
                 .addComponent(txtNomeBebida, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel3))
+                        .addGap(29, 29, 29)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(42, 42, 42)
+                        .addComponent(txtPrecoBebida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(38, 38, 38)
+                .addComponent(btnConfirmaChocolate, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(22, 22, 22)
                 .addComponent(txtNomeBebida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(94, 94, 94)
                         .addComponent(jLabel5)
-                        .addGap(70, 70, 70)
+                        .addGap(107, 107, 107)
                         .addComponent(jLabel3)
-                        .addGap(44, 44, 44))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(43, 43, 43)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(46, 46, 46)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtPrecoBebida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnConfirmaChocolate, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel4))
-                .addGap(29, 29, 29))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnConfirmaChocolate, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPrecoBebida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))
+                        .addGap(157, 157, 157))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 654, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 533, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
         );
 
         pack();
@@ -203,17 +211,27 @@ public class TelaBebidas extends javax.swing.JFrame {
 
     private void btnConfirmaChocolateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmaChocolateActionPerformed
         // confirmar pedido
-        JOptionPane.showMessageDialog(null, "Pedido Confirmado");
+        int opc = JOptionPane.showConfirmDialog(rootPane,
+                "Você deseja confirmar pedido?",
+                "Escolha a opção",
+                JOptionPane.YES_NO_OPTION
+        );
+
+        if (opc == 0) {
+            TelaLanchonete lanchonete = new TelaLanchonete();
+            lanchonete.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_btnConfirmaChocolateActionPerformed
 
     private void txtPrecoBebidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecoBebidaActionPerformed
         // TODO add your handling code here:
-       
+
     }//GEN-LAST:event_txtPrecoBebidaActionPerformed
 
     private void txtNomeBebidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeBebidaActionPerformed
         // TODO add your handling code here:
-      
+
     }//GEN-LAST:event_txtNomeBebidaActionPerformed
 
     /**

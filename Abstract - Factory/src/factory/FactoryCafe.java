@@ -5,20 +5,25 @@
 package factory;
 
 import abstracts.Bebida;
-import bebidas.Cafe;
+import bebidas.CafeGelado;
+import bebidas.CafeQuente;
 import interfaces.FactoryBebidas;
 
 /**
  *
  * @author MATHEUS LIMA
  */
-public class FactoryCafe implements FactoryBebidas{
-    //fff
+public class FactoryCafe implements FactoryBebidas {
+
     @Override
-    public Bebida createBebida() {
-        return new Cafe();
+    public Bebida hotBebida() {
+        return new CafeQuente();
     }
-    
-   
-    
+
+    @Override
+    public Bebida coldBebida() {
+        return new CafeGelado();
+    }
+
+    //fff
 }

@@ -5,16 +5,22 @@
 package factory;
 
 import abstracts.Bebida;
-import bebidas.Chocolate;
+import bebidas.ChocolateGelado;
 import interfaces.FactoryBebidas;
 
 /**
  *
  * @author MATHEUS LIMA
  */
-public class FactoryChocolate implements FactoryBebidas{
+public class FactoryChocolate implements FactoryBebidas {
+
     @Override
-    public Bebida createBebida() {
-        return new Chocolate();
+    public Bebida hotBebida() {
+        return new ChocolateGelado();
+    }
+
+    @Override
+    public Bebida coldBebida() {
+        return new ChocolateGelado();
     }
 }

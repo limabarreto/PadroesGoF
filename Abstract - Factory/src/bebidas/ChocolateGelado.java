@@ -11,10 +11,10 @@ import java.util.Arrays;
  *
  * @author MATHEUS LIMA
  */
-public class Chocolate extends Bebida {
+public class ChocolateGelado extends Bebida {
 
-    public Chocolate() {
-        nome = "Chocolate";
+    public ChocolateGelado() {
+        nome = "Chocolate Gelado";
         descricao = Arrays.asList("O chocolate é um alimento feito com\n base na amêndoa fermentada e torrada\n do cacau."
                 + "Sua origem remonta às\n civilizações pré-colombianas\n da América Central.");
         preco = 10.00;

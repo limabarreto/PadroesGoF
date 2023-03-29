@@ -5,7 +5,8 @@
 package factory;
 
 import abstracts.Bebida;
-import bebidas.Cappuccino;
+import bebidas.CappuccinoGelado;
+import bebidas.CappuccinoQuente;
 import interfaces.FactoryBebidas;
 
 /**
@@ -13,8 +14,14 @@ import interfaces.FactoryBebidas;
  * @author MATHEUS LIMA
  */
 public class FactoryCappuccino implements FactoryBebidas {
+
     @Override
-    public Bebida createBebida(){
-        return new Cappuccino();
+    public Bebida hotBebida() {
+        return new CappuccinoQuente();
+    }
+
+    @Override
+    public Bebida coldBebida() {
+        return new CappuccinoGelado();
     }
 }

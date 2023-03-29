@@ -5,17 +5,24 @@
 package factory;
 
 import abstracts.Bebida;
-import bebidas.Cha;
+import bebidas.ChaQuente;
+import bebidas.ChaGelado;
 import interfaces.FactoryBebidas;
 
 /**
  *
  * @author MATHEUS LIMA
  */
-public class FactoryCha implements FactoryBebidas{
+public class FactoryCha implements FactoryBebidas {
+
     @Override
-    public Bebida createBebida() {
-        return new Cha();
+    public Bebida hotBebida() {
+        return new ChaQuente();
     }
-    
+
+    @Override
+    public Bebida coldBebida() {
+        return new ChaGelado();
+    }
+
 }

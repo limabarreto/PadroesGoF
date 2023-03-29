@@ -11,10 +11,10 @@ import java.util.Arrays;
  *
  * @author MATHEUS LIMA
  */
-public class Cha extends Bebida {
+public class ChaQuente extends Bebida {
 
-    public Cha() {
-        nome = "Chá";
+    public ChaQuente() {
+        nome = "Chá Quente";
         descricao = Arrays.asList("O chá é uma bebida preparada "
                 + "através da\n infusão de folhas, flores, raízes \n"
                 + "de planta do chá, geralmente preparada\n"
